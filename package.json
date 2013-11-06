@@ -1,0 +1,14 @@
+{
+  "name": "manjs",
+  "author": "Damian Bushong <katana@codebite.net>",
+  "description": "local manpage proxy for *nix systems",
+  "homepage": "https://github.com/damianb/manjs",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/damianb/manjs.git"
+  },
+  "bin": {
+    "manjs": "./lib/manjs.js"
+  },
+  "version": "0.1.0"
+}
