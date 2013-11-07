@@ -8,4 +8,4 @@ MIT license, see ./LICENSE
 
 ## building
 
-cd into git root, then `coffee -bco ./lib/ ./src/` to compile.
+make sure you have coffeescript in your PATH, then run `cake build`.
