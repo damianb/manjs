@@ -2,7 +2,6 @@
 # configuration
 #
 port = 8330
-
 #
 # yes, that's all for configuration. could make a single dep on commander so we can do commandline config, but...eh.
 #
@@ -12,6 +11,12 @@ http = require 'http'
 url = require 'url'
 
 server = http.createServer (req, res) ->
+	# localhost only
+	if req.connection.remoteAddress isnt '127.0.0.1'
+		res.writeHead 403, {'Content-Type': 'text/plain'}
+		res.end '403 Forbidden'
+		return
+
 	uri = url.parse req.url
 	res.writeHead 200, {'Content-Type': 'text/html'}
 	if uri.pathname is '/' or uri.pathname.match /\/[\w\d]+/i is -1
